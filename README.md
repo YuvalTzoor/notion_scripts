@@ -7,3 +7,5 @@ Version one is for changing one specific emoji on one page, and another is to ch
 
 I used the Notion API documentary for this-
 https://developers.notion.com/reference/intro\
+
+Remember to create an integration at your notion account and shere it with the relevant database!

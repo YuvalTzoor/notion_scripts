@@ -10,15 +10,15 @@ const databaseId = process.env.NOTION_DATABASE_ID;
 const filterCondition = {
 	property: "title",
 	title: {
-		contains: "Competitive Intelligence",
+		contains: "Time to learn!",
 	},
 };
 
 // Set up the properties to update for the events
 const updateProperties = {
 	type: "emoji",
-	// Use one or another, not both:
-	emoji: "💼",
+	// book emoji: "📚",
+	emoji: "📚",
 
 	// Use one or another, not both:
 };
