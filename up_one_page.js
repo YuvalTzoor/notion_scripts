@@ -11,7 +11,7 @@ const notion = new Client({
 // Set the page ID to update and the properties to update
 const pageId = " ";
 const updateProperties = {
-	title: [{ text: { content: "my awesome title" } }],
+	title: [{ text: { content: "My awesome title" } }],
 };
 
 // Update the page with the new properties

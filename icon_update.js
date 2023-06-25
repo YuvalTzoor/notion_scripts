@@ -10,7 +10,7 @@ const databaseId = process.env.NOTION_DATABASE_ID;
 const filterCondition = {
 	property: "title",
 	title: {
-		contains: "Time to learn!",
+		contains: "Gym time",
 	},
 };
 
@@ -22,7 +22,21 @@ const updateProperties = {
 
 	// Use one or another, not both:
 };
+// const filterCondition = {
+// 	property: "calender_name",
+// 	calender_name: {
+// 		contains: "חגים בישראל",
+// 	},
+// };
 
+// // Set up the properties to update for the events
+// const updateProperties = {
+// 	type: "emoji",
+// 	// book emoji: "📚",
+// 	emoji: "🇮🇱",
+
+// 	// Use one or another, not both:
+//
 // Retrieve future events within the next 3 months from the database that match the filter conditions
 async function getFutureEvents(cursor) {
 	const now = new Date();
@@ -42,7 +56,9 @@ async function getFutureEvents(cursor) {
 		start_cursor: cursor,
 		page_size: 10,
 	});
-
+	// console.log(
+	// 	JSON.stringify(response.results.forEach((result) => result.properties))
+	// );
 	// Update the events with the nerd face icon
 	const updates = response.results.map((result) => {
 		return {
@@ -61,7 +77,8 @@ async function getFutureEvents(cursor) {
 			page_id: update.id,
 			icon: {
 				type: "emoji",
-				emoji: "🤓",
+				//gym weights emoji: "🏋️‍♂️",
+				emoji: "🏋️‍♂️",
 			},
 		});
 	}
