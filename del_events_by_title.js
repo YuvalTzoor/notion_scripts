@@ -8,41 +8,15 @@ const notion = new Client({ auth: process.env.NOTION_API_KEY });
 const DATABASE_ID = process.env.NOTION_DATABASE_ID;
 
 // The title of the event you want to delete
-const TITLE_TO_DELETE = "Time to learn!";
+const TITLE_TO_DELETE = "Gym time";
 const filterCondition = {
 	property: "title",
 	title: {
-		contains: "Time to learn!",
+		contains: "Gym time",
 	},
 };
 
-// Function to retrieve all events from the Notion database within the next three months
-// async function getDatabaseItems() {
-// 	const today = new Date();
-// 	const threeMonthsFromNow = new Date();
-// 	threeMonthsFromNow.setMonth(today.getMonth() + 3);
 
-// 	const response = await notion.databases.query({
-// 		database_id: DATABASE_ID,
-// 		filter: {
-// 			and: [
-// 				{
-// 					property: "Date", // Replace "Date" with the name of your date property in Notion
-// 					date: {
-// 						on_or_after: today.toISOString().split("T")[0],
-// 					},
-// 				},
-// 				{
-// 					property: "Date", // Replace "Date" with the name of your date property in Notion
-// 					date: {
-// 						on_or_before: threeMonthsFromNow.toISOString().split("T")[0],
-// 					},
-// 				},
-// 			],
-// 		},
-// 	});
-// 	return response.results;
-// }
 async function getDatabaseItems(cursor) {
 	const now = new Date();
 	const threeMonthsFromNow = new Date(now.getFullYear(), now.getMonth() + 3, 1);

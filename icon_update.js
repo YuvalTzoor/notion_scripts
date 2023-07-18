@@ -22,21 +22,7 @@ const updateProperties = {
 
 	// Use one or another, not both:
 };
-// const filterCondition = {
-// 	property: "calender_name",
-// 	calender_name: {
-// 		contains: "חגים בישראל",
-// 	},
-// };
 
-// // Set up the properties to update for the events
-// const updateProperties = {
-// 	type: "emoji",
-// 	// book emoji: "📚",
-// 	emoji: "🇮🇱",
-
-// 	// Use one or another, not both:
-//
 // Retrieve future events within the next 3 months from the database that match the filter conditions
 async function getFutureEvents(cursor) {
 	const now = new Date();
